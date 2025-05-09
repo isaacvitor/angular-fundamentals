@@ -19,9 +19,11 @@
           </div>
         </div>
         <div class="price">
-          <div *ngIf="!product?.discount">{{ product?.price | currency }}</div>
+          <div *ngIf="!product?.discount">
+            {{ product?.price | currency : "EUR" }}
+          </div>
           <div class="discount" *ngIf="product?.discount">
-            {{ product.price * (1 - product.discount) | currency }}
+            {{ product.price * (1 - product.discount) | currency : "EUR" }}
           </div>
           <button class="cta">Buy</button>
         </div>
